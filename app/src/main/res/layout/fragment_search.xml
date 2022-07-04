@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.varun.pixabayapp.presentation.features.search.SearchViewModel" />
+
+        <variable
+            name="adapter"
+            type="com.varun.pixabayapp.presentation.features.adapters.PixabayImageAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SearchFragment">
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:background="@color/white"
+            android:drawableEnd="@drawable/ic_baseline_search_24"
+            android:drawablePadding="4dp"
+            android:hint="@string/search_hint"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@={viewModel.searchQuery}"
+            android:textColor="@color/teal_200"
+            android:textColorHint="@color/teal_700"
+            android:tint="?attr/colorControlNormal"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/images"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:adapter="@{adapter}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

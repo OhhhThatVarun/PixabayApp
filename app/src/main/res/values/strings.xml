@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">Pixabay App</string>
+
+    <string name="retry">Retry</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="really_want_to_see_detail">Do you really want to see the detail of this image?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="search_hint">Cute kittens</string>
+    <string name="no_results_found">No results found!</string>
+    <string name="some_error_occurred">Some error occurred..</string>
+</resources>
